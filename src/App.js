@@ -61,6 +61,10 @@ export default function App() {
             holdDice={() => holdDice(die.id)}
         />
     ))
+
+    function refreshPage() {
+    window.location.reload(false);
+  }
     
     return (
         <main>
@@ -70,7 +74,7 @@ export default function App() {
             <div className="dice-container">
                 {diceElements}
             </div>
-            <button className="roll-dice" onClick={rollDice}>{tenzies ? "New Game" : "Roll"}</button>
+            <button className="roll-dice" onClick={tenzies ? refreshPage : rollDice}>{tenzies ? "New Game" : "Roll"}</button>
         </main>
     )
 }
